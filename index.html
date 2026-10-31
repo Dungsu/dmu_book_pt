@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>독서인문학 10조 발표자료</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Noto Serif KR & Pretendard -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            deepnavy: '#0b131b',
+            cardnavy: '#13202c',
+            bordernavy: '#233547',
+            gold: '#d4a373',
+            amberlight: '#e9c46a',
+            tealaccent: '#2a9d8f',
+            coralaccent: '#e76f51'
+          },
+          fontFamily: {
+            sans: ['Pretendard', 'sans-serif'],
+            serif: ['"Noto Serif KR"', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #0b131b;
+      color: #f1f5f9;
+      overflow: hidden;
+      user-select: none;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: scale(0.98);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 3.5rem 4rem 5rem 4rem;
+    }
+
+    .slide.active {
+      opacity: 1;
+      pointer-events: auto;
+      transform: scale(1);
+      z-index: 10;
+    }
+
+    /* Custom Scrollbar */
+    .custom-scroll::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .custom-scroll::-webkit-scrollbar-track {
+      background: rgba(19, 32, 44, 0.5);
+    }
+
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #334e68;
+      border-radius: 3px;
+    }
+
+    .glass-panel {
+      background: rgba(19, 32, 44, 0.78);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(212, 163, 115, 0.22);
+    }
+
+    .reveal-answer {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal-answer.shown {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body class="font-sans antialiased h-screen w-screen relative cursor-default">
+
+  <!-- Top Progress Bar -->
+  <div class="fixed top-0 left-0 right-0 h-1.5 bg-slate-800/80 z-50">
+    <div id="progressBar"
+      class="h-full bg-gradient-to-r from-gold via-amberlight to-tealaccent transition-all duration-300"
+      style="width: 7.69%;"></div>
+  </div>
+
+  <!-- Top Left Subtle Status Badge -->
+  <div class="fixed top-4 left-6 z-40 flex items-center gap-3">
+    <span id="slideBadge"
+      class="px-3 py-1 rounded-full text-xs font-medium tracking-wider uppercase bg-slate-900/80 text-gold border border-gold/30 backdrop-blur-md">
+      COVER · 01 / 13
+    </span>
+  </div>
+
+  <!-- Top Right Fullscreen Button -->
+  <div class="fixed top-4 right-6 z-40 flex items-center gap-2">
+    <button onclick="toggleFullScreen()" title="전체화면 전환 (F)"
+      class="p-2 rounded-lg text-xs bg-slate-900/85 hover:bg-slate-800 text-slate-200 border border-slate-700 backdrop-blur-md transition shadow-lg">
+      <i class="fa-solid fa-expand"></i>
+    </button>
+  </div>
+
+  <!-- ================= SLIDES CONTAINER ================= -->
+  <main id="slidesContainer" class="relative w-full h-full">
+
+    <!-- SLIDE 1: Title & Cover Slide -->
+    <section class="slide active" data-badge="COVER · 01 / 13">
+      <div class="max-w-4xl w-full text-center space-y-8 py-6">
+        <!-- Subject Badge -->
+        <div
+          class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/15 border border-gold/40 text-amberlight text-sm font-semibold tracking-wider shadow-lg">
+          <i class="fa-solid fa-book-bookmark text-gold"></i> 독서인문학 발표자료
+        </div>
+
+        <!-- Main Book Title & Subtitle -->
+        <div class="space-y-4">
+          <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white leading-tight">
+            나는 풍요로웠고<br />
+            <span class="bg-gradient-to-r from-amberlight via-gold to-tealaccent bg-clip-text text-transparent">
+              지구는 달라졌다
+            </span>
+          </h1>
+          <p class="font-serif text-lg md:text-2xl text-slate-300 font-medium tracking-wide">
+            호프 자런 <span class="text-xs md:text-sm text-slate-400 font-sans font-normal">(Hope Jahren)</span> · 4부 ‘지구’
+          </p>
+        </div>
+
+        <!-- Decorative Divider -->
+        <div class="flex items-center justify-center gap-3 w-48 mx-auto my-2">
+          <div class="h-[1px] flex-1 bg-gradient-to-r from-transparent to-gold/60"></div>
+          <i class="fa-solid fa-leaf text-gold/70 text-sm"></i>
+          <div class="h-[1px] flex-1 bg-gradient-to-l from-transparent to-gold/60"></div>
+        </div>
+
+        <!-- Team & Presenter Info Card -->
+        <div class="glass-panel max-w-xl mx-auto py-5 px-8 rounded-2xl border border-gold/30 shadow-2xl space-y-2">
+          <div class="text-xs uppercase tracking-widest text-gold font-bold">Presentation Team</div>
+          <div class="font-serif text-2xl md:text-3xl font-bold text-white tracking-wide">
+            10조 <span class="text-gold/60 font-light mx-2">|</span> 신동수 · 김예지 · 인용석
+          </div>
+        </div>
+
+        <!-- Start Presentation Prompt -->
+        <div class="pt-4">
+          <button onclick="handleNext()"
+            class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-gradient-to-r from-gold to-amberlight text-deepnavy font-bold text-sm hover:brightness-110 shadow-lg shadow-gold/20 transition transform hover:scale-105 cursor-pointer">
+            <span>발표 시작하기</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 2: Intro Image 1 (Sustainable city) - 통일된 규격 프레임 -->
+    <section class="slide" data-badge="INTRO · 02 / 13">
+      <div class="flex flex-col items-center justify-center space-y-6">
+        <div
+          class="relative w-[550px] h-[410px] max-w-[90vw] max-h-[65vh] rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.85)] border border-gold/30 bg-cardnavy flex items-center justify-center group transition-all duration-300">
+          <img id="slide1Img" src="Sustainable city - LR.jpg"
+            onerror="this.onerror=null; this.src='city.jpg';"
+            alt="스모그로 뒤덮인 도시 풍경" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 3: Intro Image 2 (빨대거북이) - 동일한 규격 프레임 -->
+    <section class="slide" data-badge="INTRO · 03 / 13">
+      <div class="flex flex-col items-center justify-center space-y-6">
+        <div
+          class="relative w-[550px] h-[410px] max-w-[90vw] max-h-[65vh] rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.85)] border border-gold/30 bg-cardnavy flex items-center justify-center group transition-all duration-300">
+          <img id="slide2Img" src="빨대거북이.jpg"
+            onerror="this.onerror=null; this.src='turtle.jpg';"
+            alt="플라스틱 빨대에 고통받는 바다거북" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 4: Intro Image 3 (텀블러) - 동일한 규격 프레임 -->
+    <section class="slide" data-badge="INTRO · 04 / 13">
+      <div class="flex flex-col items-center justify-center space-y-6">
+        <div
+          class="relative w-[550px] h-[410px] max-w-[90vw] max-h-[65vh] rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.85)] border border-gold/30 bg-cardnavy flex items-center justify-center group transition-all duration-300">
+          <img id="slide3Img" src="텀블러.jpg"
+            onerror="this.onerror=null; this.src='tumbler.jpg';"
+            alt="다양한 색상의 텀블러들" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 5: Hook Question & Reveal (답변 버튼 삭제, 우측 클릭/키보드로 답변 공개) -->
+    <section class="slide" data-badge="OPENING · 05 / 13">
+      <div class="max-w-4xl w-full text-center space-y-12">
+        <div
+          class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/10 border border-gold/30 text-gold text-sm font-medium">
+          <i class="fa-solid fa-seedling"></i> 생각 열기
+        </div>
+
+        <h1 class="font-serif text-4xl md:text-6xl font-bold tracking-tight text-white leading-tight">
+          “방금 보신 사진들을 보며<br />
+          <span class="text-amberlight">어떤 게 떠오르나요?</span>”
+        </h1>
+
+        <!-- Hook Answer Box (우측 클릭 또는 스페이스바/우측 방향키로 자연스럽게 등장) -->
+        <div id="hookAnswerBox" class="reveal-answer glass-panel p-8 md:p-10 rounded-2xl max-w-3xl mx-auto shadow-2xl">
+          <p class="font-serif text-2xl md:text-3xl text-slate-100 leading-relaxed">
+            맞습니다. 오늘 우리가 함께 이야기해 볼 주제인<br />
+            <span class="text-tealaccent font-bold underline decoration-tealaccent/50 underline-offset-8">‘기후 변화와
+              환경’</span>에 관련된 이미지들이었습니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 6: Book Introduction (4부 지구) -->
+    <section class="slide" data-badge="BOOK INTRO · 06 / 13">
+      <div
+        class="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center custom-scroll overflow-y-auto max-h-full py-2">
+        <!-- Left: Book Cover Image Card -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div
+            class="relative w-72 md:w-80 aspect-[3/4.4] rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.85)] border border-gold/40 bg-cardnavy flex items-center justify-center group transition-all duration-300">
+            <img id="bookCoverImg" src="book_cover.jpg"
+              alt="나는 풍요로웠고 지구는 달라졌다 도서 표지"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+          </div>
+        </div>
+
+        <!-- Right: Book Details -->
+        <div class="lg:col-span-7 space-y-5 text-left">
+          <div>
+            <span class="text-gold text-sm font-semibold tracking-wider uppercase">Book Introduction · 도서 소개</span>
+            <h2 class="font-serif text-3xl md:text-5xl font-bold text-white mt-1 leading-tight">
+              나는 풍요로웠고,<br />지구는 달라졌다
+            </h2>
+            <p class="text-slate-400 text-sm mt-1">호프 자런 지음 · 김은령 옮김 | 4부 ‘지구’ 편</p>
+          </div>
+
+          <!-- 4부 서두 인용구 -->
+          <div class="p-3.5 rounded-xl bg-gold/10 border-l-4 border-gold text-slate-200">
+            <p class="font-serif text-sm italic">“물질에 대한 집착은 자연에 대항하는 방향으로 열정을 불러온다.”</p>
+            <p class="text-[11px] text-amberlight/80 mt-1">- 막달라 마리아 복음 (150년경, 4부 서두 인용문)</p>
+          </div>
+
+          <p class="text-slate-200 text-base md:text-lg leading-relaxed">
+            지난 반세기 동안 인류가 이룩한 눈부신 <span class="text-amberlight font-semibold">‘물질적 풍요’</span>의 이면에, 우리가 딛고 선 지구가 어떤 대가를
+            치르고 있는지를 십수 년간 축적된 과학적 데이터로 차분하고도 묵직하게 풀어낸 논픽션입니다.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+            <div class="glass-panel p-5 rounded-xl">
+              <div class="text-gold text-sm font-bold mb-1.5 flex items-center gap-2">
+                <i class="fa-solid fa-chart-line"></i> 풍요의 역설 수량화
+              </div>
+              <p class="text-xs md:text-sm text-slate-300 leading-relaxed">
+                인구, 농업, 에너지 사용량의 폭발적 증가 패턴을 분석하여 인류의 과도한 소비가 대기·빙하·해양·생태계를 어떻게 바꾸었는지 명확히 증명합니다.
+              </p>
+            </div>
+            <div class="glass-panel p-5 rounded-xl">
+              <div class="text-tealaccent text-sm font-bold mb-1.5 flex items-center gap-2">
+                <i class="fa-solid fa-hand-holding-heart"></i> 덜 소비하고 더 나누기
+              </div>
+              <p class="text-xs md:text-sm text-slate-300 leading-relaxed">
+                막연한 두려움이나 허무주의에 빠져 포기하는 대신, 삶의 방식을 바꾸어 에너지를 덜 쓰고 자원을 아끼는 ‘소비의 해독’을 실천적 대안으로 제시합니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 7: Author Introduction (호프 자런 - 사용자 첨부 이미지 대체) -->
+    <section class="slide" data-badge="AUTHOR · 07 / 13">
+      <div
+        class="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center custom-scroll overflow-y-auto max-h-full py-2">
+        <!-- Author Photo & Quick Profile -->
+        <div class="lg:col-span-4 flex flex-col items-center">
+          <div
+            class="w-56 h-56 md:w-64 md:h-64 rounded-2xl overflow-hidden border-2 border-gold/50 shadow-2xl bg-cardnavy relative flex items-center justify-center">
+            <img id="authorImg"
+              src="hope_jahren.jpg"
+              alt="호프 자런 작가 사진" class="w-full h-full object-cover" />
+          </div>
+          <div class="mt-4 text-center">
+            <h3 class="font-serif text-2xl font-bold text-white">호프 자런 <span
+                class="text-sm font-normal text-slate-400">Hope Jahren</span></h3>
+            <p class="text-xs text-amberlight mt-1">1969년 출생 · 식물생물학자 & 지구생물학자</p>
+            <p class="text-xs text-slate-400">현 노르웨이 오슬로 대학교 교수</p>
+          </div>
+        </div>
+
+        <!-- Author Bio & Highlights -->
+        <div class="lg:col-span-8 space-y-5 text-left">
+          <div>
+            <span class="text-gold text-sm font-semibold tracking-wider uppercase">Author Profile · 작가 소개</span>
+            <h2 class="font-serif text-2xl md:text-4xl font-bold text-white mt-1">
+              따뜻한 시선과 냉철한 데이터의 과학자
+            </h2>
+          </div>
+
+          <!-- Key Achievements -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div class="bg-cardnavy/90 border border-bordernavy p-4 rounded-xl">
+              <div class="text-amberlight text-xs font-semibold mb-1"><i class="fa-solid fa-book-open mr-1"></i> 대표 저서
+              </div>
+              <div class="text-sm font-bold text-white">글로벌 베스트셀러<br />《랩걸 (Lab Girl)》 저자</div>
+            </div>
+            <div class="bg-cardnavy/90 border border-bordernavy p-4 rounded-xl">
+              <div class="text-amberlight text-xs font-semibold mb-1"><i class="fa-solid fa-earth-americas mr-1"></i>
+                국제적 영향력</div>
+              <div class="text-sm font-bold text-white">2016 타임지 선정<br />‘세계에서 가장 영향력 있는 100인’</div>
+            </div>
+            <div class="bg-cardnavy/90 border border-bordernavy p-4 rounded-xl">
+              <div class="text-amberlight text-xs font-semibold mb-1"><i class="fa-solid fa-award mr-1"></i> 학술적 영예
+              </div>
+              <div class="text-sm font-bold text-white">과학자 최고 영예 중 하나인<br />‘풀브라이트 상’ 3회 수상</div>
+            </div>
+          </div>
+
+          <!-- Narrative Characteristics based strictly on reading material -->
+          <div class="glass-panel p-6 rounded-2xl space-y-3 text-sm md:text-base text-slate-200 leading-relaxed">
+            <p>
+              <i class="fa-solid fa-quote-left text-gold/60 mr-2"></i>
+              <b>1999년 식물 생육장(Plexiglas 상자)을 직접 설계</b>하여 이산화탄소 농도 상승이 식물과 온도에 미치는 영향을 실험하고 온실효과의 위력을 눈으로 직접 확인했습니다.
+            </p>
+            <p>
+              어린 시절 1980년대 핵전쟁 공포를 겪었던 경험을 되돌아보며, <b>“두려움은 문제를 외면하게 만들고 정보는 문제에 관심을 갖게 한다”</b>는 교육자로서의 신념을 강조합니다.
+            </p>
+            <p class="text-amberlight font-medium">
+              기후 위기 앞에서 막연한 공포나 게으른 허무주의에 빠지는 것을 경계하며, 일상에서 에너지를 덜 소비하는 <b>‘소비의 해독’과 서로에 대한 친절</b>을 행동 강령으로 촉구합니다.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 8: Key Figures (읽기 자료에 실제 등장하는 과학사 및 핵심 인물) -->
+    <section class="slide" data-badge="KEY FIGURES · 08 / 13">
+      <div class="max-w-6xl w-full space-y-6 custom-scroll overflow-y-auto max-h-full py-2">
+        <div class="text-center">
+          <span class="text-gold text-xs font-semibold tracking-widest uppercase">Scientists & Thinkers</span>
+          <h2 class="font-serif text-2xl md:text-4xl font-bold text-white mt-1">읽기 자료 속 핵심 과학자 및 인물</h2>
+          <p class="text-xs text-slate-400 mt-1">본문(4부 14장~19장)에 직접 언급된 기후 과학과 실천의 인물들</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <!-- 1. Eunice Foote -->
+          <div class="bg-cardnavy/90 border border-bordernavy p-5 rounded-2xl space-y-2.5 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-1">
+                <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-amberlight/15 text-amberlight">14장 · 1856년 최초 관찰</span>
+                <i class="fa-solid fa-flask text-gold/60"></i>
+              </div>
+              <h4 class="font-serif text-lg font-bold text-white">유니스 푸트 <span class="text-xs font-normal text-slate-400">Eunice Foote</span></h4>
+              <p class="text-xs text-slate-300 leading-relaxed mt-2">
+                유리병에 이산화탄소를 많이 채우면 햇빛 아래에서 훨씬 더 따뜻해지고 식는 데에도 오랜 시간이 걸린다는 <b>온실효과의 기본 원리를 최초로 관찰</b>했습니다.
+              </p>
+            </div>
+            <div class="text-[11px] text-slate-400 border-t border-white/10 pt-2">최초의 이산화탄소 열 흡수 발견</div>
+          </div>
+
+          <!-- 2. John Tyndall -->
+          <div class="bg-cardnavy/90 border border-bordernavy p-5 rounded-2xl space-y-2.5 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-1">
+                <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-tealaccent/15 text-tealaccent">14장 · 학계 공식 입증</span>
+                <i class="fa-solid fa-vial-circle-check text-tealaccent/60"></i>
+              </div>
+              <h4 class="font-serif text-lg font-bold text-white">존 틴들 <span class="text-xs font-normal text-slate-400">John Tyndall</span></h4>
+              <p class="text-xs text-slate-300 leading-relaxed mt-2">
+                유니스 푸트의 발견 몇 년 후, 정교한 구리 장치를 만들어 이산화탄소가 열을 가두는 원리를 증명하여 <b>학계의 공식 인정을 받은 물리학자</b>입니다.
+              </p>
+            </div>
+            <div class="text-[11px] text-slate-400 border-t border-white/10 pt-2">구리 장치를 통한 온실기체 증명</div>
+          </div>
+
+          <!-- 3. Svante Arrhenius -->
+          <div class="bg-cardnavy/90 border border-bordernavy p-5 rounded-2xl space-y-2.5 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-1">
+                <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-coralaccent/15 text-coralaccent">14장 · 1896년 최초 경고</span>
+                <i class="fa-solid fa-triangle-exclamation text-coralaccent/60"></i>
+              </div>
+              <h4 class="font-serif text-lg font-bold text-white">스반테 아레니우스 <span class="text-xs font-normal text-slate-400">S. Arrhenius</span></h4>
+              <p class="text-xs text-slate-300 leading-relaxed mt-2">
+                스웨덴의 노벨화학상 수상자. 1896년에 이미 <b>화석연료를 태우는 일이 지구온난화를 야기할 것임을 일찍이 공식 경고</b>했던 선구적 화학자입니다.
+              </p>
+            </div>
+            <div class="text-[11px] text-slate-400 border-t border-white/10 pt-2">화석연료 연소와 온난화 최초 예측</div>
+          </div>
+
+          <!-- 4. E. O. Wilson -->
+          <div class="bg-cardnavy/90 border border-bordernavy p-5 rounded-2xl space-y-2.5 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-1">
+                <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300">19장 · 생물 다양성의 아버지</span>
+                <i class="fa-solid fa-tree text-emerald-400/60"></i>
+              </div>
+              <h4 class="font-serif text-lg font-bold text-white">E. O. 윌슨 <span class="text-xs font-normal text-slate-400">Edward O. Wilson</span></h4>
+              <p class="text-xs text-slate-300 leading-relaxed mt-2">
+                여섯 번째 대멸종을 막기 위해 지구상 <b>육지의 50퍼센트를 인간의 손길이 닿지 않는 자연 보존 지역으로 지정하자는 ‘지구의 절반(Half-Earth)’</b>을 제창했습니다.
+              </p>
+            </div>
+            <div class="text-[11px] text-slate-400 border-t border-white/10 pt-2">Half-Earth 50% 보존 구상</div>
+          </div>
+
+          <!-- 5. W. S. Merwin -->
+          <div class="bg-cardnavy/90 border border-bordernavy p-5 rounded-2xl space-y-2.5 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-1">
+                <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-300">19장 · 계관시인의 복원</span>
+                <i class="fa-solid fa-seedling text-amber-400/60"></i>
+              </div>
+              <h4 class="font-serif text-lg font-bold text-white">W. S. 머윈 <span class="text-xs font-normal text-slate-400">W. S. Merwin</span></h4>
+              <p class="text-xs text-slate-300 leading-relaxed mt-2">
+                미국의 계관시인. 1977년 하와이 마우이의 <b>버려진 쓰레기 하치장에 30여 년간 나무를 심어 300종 이상의 멸종위기 야자나무를 품은 울창한 숲</b>으로 복원했습니다.
+              </p>
+            </div>
+            <div class="text-[11px] text-slate-400 border-t border-white/10 pt-2">쓰레기장을 열대림으로 복원한 실천</div>
+          </div>
+
+          <!-- 6. Jeffrey Sachs -->
+          <div class="bg-cardnavy/90 border border-bordernavy p-5 rounded-2xl space-y-2.5 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-1">
+                <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-blue-500/15 text-blue-300">19장 · 세계행복협의회</span>
+                <i class="fa-solid fa-chart-pie text-blue-400/60"></i>
+              </div>
+              <h4 class="font-serif text-lg font-bold text-white">제프리 색스 <span class="text-xs font-normal text-slate-400">Jeffrey Sachs</span></h4>
+              <p class="text-xs text-slate-300 leading-relaxed mt-2">
+                유엔 자문관. 2017년 세계행복보고서를 통해 <b>“소비와 에너지 사용이 늘어났다고 해서 인류가 더 행복해지지 않았다”</b>는 점을 객관적으로 분석 발표했습니다.
+              </p>
+            </div>
+            <div class="text-[11px] text-slate-400 border-t border-white/10 pt-2">풍요와 행복의 탈동조화 규명</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 9: Summary Part 1 (14장 ~ 15장) -->
+    <section class="slide" data-badge="SUMMARY 1 · 09 / 13">
+      <div class="max-w-6xl w-full space-y-6 custom-scroll overflow-y-auto max-h-full py-2">
+        <div class="text-center">
+          <span class="text-gold text-xs font-semibold tracking-widest uppercase">Part 4 Summary · 4부 줄거리 (1/3)</span>
+          <h2 class="font-serif text-2xl md:text-4xl font-bold text-white mt-1">변해버린 대기와 따뜻해진 날씨</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Chapter 14 -->
+          <div class="glass-panel p-7 rounded-2xl flex flex-col justify-between border-t-4 border-t-gold">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span
+                  class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-gold/20 text-amberlight">Chapter
+                  14</span>
+                <i class="fa-solid fa-smog text-2xl text-gold/60"></i>
+              </div>
+              <h3 class="font-serif text-2xl font-bold text-white">14장. 변해버린 대기</h3>
+              <p class="text-sm md:text-base text-slate-200 leading-relaxed">
+                인류가 화석연료를 캐서 태워온 지난 50년 동안, 우리는 대기 중으로 무려 <span class="text-amberlight font-bold">3조 톤의 여분의
+                  이산화탄소</span>를 쏟아냈습니다. 땅속에 묻혀 있던 탄소가 한꺼번에 대기로 배출된 것입니다.
+              </p>
+              <p class="text-sm md:text-base text-slate-300 leading-relaxed">
+                저자의 1999년 식물 생육장 실험(1시간 만에 30℃ 돌파)과 유니스 푸트·존 틴들의 연구처럼, 이산화탄소 분자는 <b>열을 빼앗아 흡수하는 독특한 구조</b>를 가지고 있어 지구의 대기 환경을 완전히 바꾸어 놓았습니다.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-slate-400">
+              <span>핵심 키워드: 생명의 연소 축제, 3조 톤 CO₂, 생육장 실험</span>
+              <span class="text-amberlight font-semibold">CO₂ 1/3 이상 증가</span>
+            </div>
+          </div>
+
+          <!-- Chapter 15 -->
+          <div class="glass-panel p-7 rounded-2xl flex flex-col justify-between border-t-4 border-t-coralaccent">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span
+                  class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-coralaccent/20 text-coralaccent">Chapter
+                  15</span>
+                <i class="fa-solid fa-temperature-arrow-up text-2xl text-coralaccent/60"></i>
+              </div>
+              <h3 class="font-serif text-2xl font-bold text-white">15장. 따뜻해진 날씨</h3>
+              <p class="text-sm md:text-base text-slate-200 leading-relaxed">
+                태양열과 기압 차로 발생하는 바람과 날씨에 이산화탄소가 열을 가두며, 폭풍·폭우·가뭄·살인적 추위가 극단화되는 <span class="text-coralaccent font-bold">‘글로벌 위어딩(Global Weirding)’</span>이 발생하고 있습니다.
+              </p>
+              <p class="text-sm md:text-base text-slate-300 leading-relaxed">
+                지난 100년간 기온은 화씨 1.5도 이상 상승했습니다. 유엔 협약, 교토의정서, 파리협정(2도 이내 제한)을 맺었음에도 <b>배출량은 줄지 않았으며</b>, 모든 인류가 미국식 풍요를 누릴 경우 배출량이 4배로 폭증할 위기입니다.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-slate-400">
+              <span>핵심 키워드: 글로벌 위어딩, 파리협정, 2도 한계선</span>
+              <span class="text-coralaccent font-semibold">화씨 1.5°F(약 1℃) 상승</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 10: Summary Part 2 (16장 ~ 17장) -->
+    <section class="slide" data-badge="SUMMARY 2 · 10 / 13">
+      <div class="max-w-6xl w-full space-y-6 custom-scroll overflow-y-auto max-h-full py-2">
+        <div class="text-center">
+          <span class="text-gold text-xs font-semibold tracking-widest uppercase">Part 4 Summary · 4부 줄거리 (2/3)</span>
+          <h2 class="font-serif text-2xl md:text-4xl font-bold text-white mt-1">녹아내리는 빙하와 높아지는 수위</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Chapter 16 -->
+          <div class="glass-panel p-7 rounded-2xl flex flex-col justify-between border-t-4 border-t-sky-400">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span
+                  class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-sky-400/20 text-sky-300">Chapter
+                  16</span>
+                <i class="fa-solid fa-icicles text-2xl text-sky-400/60"></i>
+              </div>
+              <h3 class="font-serif text-2xl font-bold text-white">16장. 녹아내리는 빙하</h3>
+              <p class="text-sm md:text-base text-slate-200 leading-relaxed">
+                지구 전체 물 중 담수는 단 세 스푼이며 그중 두 스푼은 얼음입니다. 1970년대 이후 빙하가 녹아내려 <span class="text-sky-300 font-bold">로키산맥의 빙하는 저자 출생 이후 절반으로 감소</span>했고 글레이셔 국립공원의 빙하도 소멸 위기에 처했습니다.
+              </p>
+              <p class="text-sm md:text-base text-slate-300 leading-relaxed">
+                캐나다 연못 하키와 네덜란드 스케이트 마라톤이 중단되었고, 과거 동계올림픽 개최지의 절반 가까이가 야외 경기를 열 수 없게 되었습니다. 북극해 해빙기가 10월까지 길어지며 바다 얼음이 얇아져 <b>북극곰의 터전이 붕괴</b>되고 있습니다.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-slate-400">
+              <span>핵심 키워드: 글레이셔 국립공원, 동계올림픽 불가, 북극 해빙</span>
+              <span class="text-sky-300 font-semibold">담수의 2/3는 빙하</span>
+            </div>
+          </div>
+
+          <!-- Chapter 17 -->
+          <div class="glass-panel p-7 rounded-2xl flex flex-col justify-between border-t-4 border-t-tealaccent">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span
+                  class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-tealaccent/20 text-tealaccent">Chapter
+                  17</span>
+                <i class="fa-solid fa-water text-2xl text-tealaccent/60"></i>
+              </div>
+              <h3 class="font-serif text-2xl font-bold text-white">17장. 높아지는 수위</h3>
+              <p class="text-sm md:text-base text-slate-200 leading-relaxed">
+                1880년대 이후 해수면이 17cm 이상 상승했으며, 그 <span class="text-tealaccent font-bold">상승의 절반 이상이 1969년 이후에 가속화</span>되었습니다. 빙하 융해와 수온 상승에 따른 바닷물 열팽창 때문입니다.
+              </p>
+              <p class="text-sm md:text-base text-slate-300 leading-relaxed">
+                토양과 지하수에 염분이 침투하여 식수를 망치고, 배출량의 1%도 안 되는 <b>방글라데시가 국토 20%를 잃을 위기</b>에 처하는 기후 불평등이 심화됩니다. 또한 흡수된 CO₂로 바다가 산성화되어 산호초와 조개류 외피가 파괴되고 있습니다.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-slate-400">
+              <span>핵심 키워드: 해수면 17cm↑, 방글라데시 20% 손실, 해양 산성화</span>
+              <span class="text-tealaccent font-semibold">남극 대륙 빙하 90%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 11: Summary Part 3 (18장 ~ 19장) -->
+    <section class="slide" data-badge="SUMMARY 3 · 11 / 13">
+      <div class="max-w-6xl w-full space-y-6 custom-scroll overflow-y-auto max-h-full py-2">
+        <div class="text-center">
+          <span class="text-gold text-xs font-semibold tracking-widest uppercase">Part 4 Summary · 4부 줄거리 (3/3)</span>
+          <h2 class="font-serif text-2xl md:text-4xl font-bold text-white mt-1">가혹한 작별 인사와 또 다른 페이지</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Chapter 18 -->
+          <div class="glass-panel p-7 rounded-2xl flex flex-col justify-between border-t-4 border-t-rose-500">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span
+                  class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-rose-500/20 text-rose-300">Chapter
+                  18</span>
+                <i class="fa-solid fa-fish-fins text-2xl text-rose-400/60"></i>
+              </div>
+              <h3 class="font-serif text-2xl font-bold text-white">18장. 가혹한 작별 인사</h3>
+              <p class="text-sm md:text-base text-slate-200 leading-relaxed">
+                도시 팽창과 유럽인의 식민화 이후 남·북미 <b>열대우림의 88%, 산호초 90%, 초원의 95%가 파괴</b>되었고 외래 침입종이 토착종을 몰아냈습니다. 극도의 고온은 박쥐 군락을 파괴하고, 모래 온도 상승으로 푸른바다거북의 알은 거의 암컷으로만 부화하는 위기에 놓였습니다.
+              </p>
+              <p class="text-sm md:text-base text-slate-300 leading-relaxed">
+                현재 전 세계 멸종률은 화석 속 자연적인 <span class="text-rose-300 font-bold">배경 소멸률보다 1,000배나 높습니다.</span> 이 추세라면 2050년까지 생물종의 25%가 사라지며, 이는 지질시대의 5대 대멸종에 준하는 파국입니다.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-slate-400">
+              <span>핵심 키워드: 서식지 파괴, 푸른바다거북, 배경소멸률 1,000배</span>
+              <span class="text-rose-300 font-semibold">2050년 25% 멸종 위기</span>
+            </div>
+          </div>
+
+          <!-- Chapter 19 -->
+          <div class="glass-panel p-7 rounded-2xl flex flex-col justify-between border-t-4 border-t-amberlight">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span
+                  class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-amberlight/20 text-amberlight">Chapter
+                  19</span>
+                <i class="fa-solid fa-book-open-reader text-2xl text-amberlight/60"></i>
+              </div>
+              <h3 class="font-serif text-2xl font-bold text-white">19장. 또 다른 페이지</h3>
+              <p class="text-sm md:text-base text-slate-200 leading-relaxed">
+                탄소 포집·저장(CCS), 암석 풍화, 나무 심기, 차광막·에어로졸 같은 기술적 대안들은 <b>더 많은 에너지를 소모하거나 가뭄·기후 교란 등 위험과 한계</b>가 뚜렷합니다. 숲을 늘리는 것도 농지 부족 딜레마를 낳습니다.
+              </p>
+              <p class="text-sm md:text-base text-slate-300 leading-relaxed">
+                유일하고 지속 가능한 해법은 <span class="text-amberlight font-bold">에너지를 덜 쓰는 생활 방식인 ‘소비의 해독’</span>입니다. 선진국과 미국이 항공·자동차 이용을 줄여야 합니다. 게으른 허무주의를 경계하고 서로에게 친절하며 아직 쓰여지지 않은 새로운 세기의 페이지를 채워가야 합니다.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-slate-400">
+              <span>핵심 키워드: 기술적 대안의 한계, 소비의 해독, 용기와 희망</span>
+              <span class="text-amberlight font-semibold">새로운 세기의 빈 페이지</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 12: Debate Topic 1 -->
+    <section class="slide" data-badge="DEBATE 1 · 12 / 13">
+      <div class="max-w-6xl w-full space-y-6 custom-scroll overflow-y-auto max-h-full py-2">
+        <div class="text-center space-y-2">
+          <span
+            class="px-3.5 py-1 rounded-full bg-gold/20 text-amberlight text-xs font-bold tracking-widest uppercase border border-gold/40">
+            Discussion Topic 01 · 토론 주제 1번
+          </span>
+          <h2 class="font-serif text-xl md:text-3xl font-bold text-white max-w-4xl mx-auto leading-snug pt-2">
+            “전 지구적 기후 위기 극복을 위해, 과거 화석연료로 부를 축적한 선진국이 개발도상국보다 훨씬 더 무거운 경제적·도의적 책임을 져야 하는가?”
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+          <!-- PRO (찬성) -->
+          <div
+            class="glass-panel p-7 md:p-8 rounded-2xl border-2 border-tealaccent/60 bg-gradient-to-b from-tealaccent/10 to-transparent flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between border-b border-tealaccent/30 pb-3">
+                <span class="text-lg md:text-xl font-bold text-tealaccent flex items-center gap-2">
+                  <i class="fa-solid fa-circle-check"></i> 찬성 (PRO)
+                </span>
+                <span class="text-xs px-2.5 py-1 rounded bg-tealaccent/20 text-tealaccent font-medium">기후 정의 및 원인자 책임 원칙</span>
+              </div>
+              <p class="font-serif text-base md:text-lg text-slate-100 leading-relaxed">
+                “전 세계 이산화탄소 배출량의 <span class="text-tealaccent font-bold">1퍼센트도 배출하지 않은 국가</span>가 가장 비싼 대가를 치르며 삶의 터전을
+                잃는 것은 매우 부당하므로, 근본적인 원인을 제공하며 부를 쌓은 쪽이 그에 상응하는 책임을 지는 것이 <span
+                  class="underline decoration-tealaccent/60 underline-offset-4">국제 사회의 정의에 부합</span>하기 때문이다.”
+              </p>
+            </div>
+            <div class="mt-6 pt-3 border-t border-white/10 text-xs text-slate-400 flex items-center gap-2">
+              <i class="fa-solid fa-book-bookmark text-tealaccent"></i>
+              <span>본문 근거: 17장 방글라데시의 해수면 상승 피해 사례 (배출량 1% 미만 vs 국토 20% 손실 위기)</span>
+            </div>
+          </div>
+
+          <!-- CON (반대) -->
+          <div
+            class="glass-panel p-7 md:p-8 rounded-2xl border-2 border-coralaccent/60 bg-gradient-to-b from-coralaccent/10 to-transparent flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between border-b border-coralaccent/30 pb-3">
+                <span class="text-lg md:text-xl font-bold text-coralaccent flex items-center gap-2">
+                  <i class="fa-solid fa-circle-xmark"></i> 반대 (CON)
+                </span>
+                <span class="text-xs px-2.5 py-1 rounded bg-coralaccent/20 text-coralaccent font-medium">보편적 협력 및 공동 전환 원칙</span>
+              </div>
+              <p class="font-serif text-base md:text-lg text-slate-100 leading-relaxed">
+                “유엔 기후변화 협약이나 파리협정의 본래 목적 역시 <span class="text-coralaccent font-bold">특정 국가의 일방적인 희생이나 배상이 아니라</span>, 전
+                세계 국가들의 동의와 협력을 얻어 <span class="underline decoration-coralaccent/60 underline-offset-4">인류 전체의 에너지 사용에
+                  관한 광범위한 변화를 함께 이끌어내는 데</span> 있기 때문이다.”
+              </p>
+            </div>
+            <div class="mt-6 pt-3 border-t border-white/10 text-xs text-slate-400 flex items-center gap-2">
+              <i class="fa-solid fa-book-bookmark text-coralaccent"></i>
+              <span>본문 근거: 15장 UNFCCC 및 파리협정의 취지 & 19장 ‘우리 모두’의 연대 강조</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 13: Debate Topic 2 -->
+    <section class="slide" data-badge="DEBATE 2 · 13 / 13">
+      <div class="max-w-6xl w-full space-y-6 custom-scroll overflow-y-auto max-h-full py-2">
+        <div class="text-center space-y-2">
+          <span
+            class="px-3.5 py-1 rounded-full bg-gold/20 text-amberlight text-xs font-bold tracking-widest uppercase border border-gold/40">
+            Discussion Topic 02 · 토론 주제 2번
+          </span>
+          <h2 class="font-serif text-xl md:text-3xl font-bold text-white max-w-4xl mx-auto leading-snug pt-2">
+            “기후 위기 해결을 위해 대중에게 닥쳐올 파국적 재앙과 공포를 강하고 자극적으로 경고하는 방식은 효과적인가?”
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+          <!-- PRO (찬성) -->
+          <div
+            class="glass-panel p-7 md:p-8 rounded-2xl border-2 border-tealaccent/60 bg-gradient-to-b from-tealaccent/10 to-transparent flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between border-b border-tealaccent/30 pb-3">
+                <span class="text-lg md:text-xl font-bold text-tealaccent flex items-center gap-2">
+                  <i class="fa-solid fa-bolt"></i> 찬성 (PRO)
+                </span>
+                <span class="text-xs px-2.5 py-1 rounded bg-tealaccent/20 text-tealaccent font-medium">경각심 고취 및 충격 요법</span>
+              </div>
+              <p class="font-serif text-base md:text-lg text-slate-100 leading-relaxed">
+                “전 세계 모든 사람이 현재 미국인처럼 에너지를 소비할 경우 <span class="text-tealaccent font-bold">이산화탄소 배출량이 무려 네 배가 될 수 있는 대격변의 상황</span>이므로, 화석연료 중독에 빠진 인류의 안일한 태도를 산산조각 내기 위해서는 <span
+                  class="underline decoration-tealaccent/60 underline-offset-4">충격적인 경고 요법이 필수적</span>이기 때문이다.”
+              </p>
+            </div>
+            <div class="mt-6 pt-3 border-t border-white/10 text-xs text-slate-400 flex items-center gap-2">
+              <i class="fa-solid fa-book-bookmark text-tealaccent"></i>
+              <span>본문 근거: 15장 전 세계가 미국식 풍요를 택할 경우 발생할 대격변 시나리오</span>
+            </div>
+          </div>
+
+          <!-- CON (반대) -->
+          <div
+            class="glass-panel p-7 md:p-8 rounded-2xl border-2 border-coralaccent/60 bg-gradient-to-b from-coralaccent/10 to-transparent flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between border-b border-coralaccent/30 pb-3">
+                <span class="text-lg md:text-xl font-bold text-coralaccent flex items-center gap-2">
+                  <i class="fa-solid fa-graduation-cap"></i> 반대 (CON)
+                </span>
+                <span class="text-xs px-2.5 py-1 rounded bg-coralaccent/20 text-coralaccent font-medium">정보 기반 설득 및 교육적 접근</span>
+              </div>
+              <p class="font-serif text-base md:text-lg text-slate-100 leading-relaxed">
+                “저자가 본문에서 거듭 강조했듯 <span class="text-coralaccent font-bold">두려움은 문제를 외면하게 만들고, 정보는 문제에 관심을 갖게 하므로</span>,
+                에너지 사용에 대한 인류의 집단적 이해를 근본적으로 바꾸려면 두려움보다는 <span
+                  class="underline decoration-coralaccent/60 underline-offset-4">논리적인 설득과 교육이 훨씬 더 지속 가능하고 효과적</span>이기
+                때문이다.”
+              </p>
+            </div>
+            <div class="mt-6 pt-3 border-t border-white/10 text-xs text-slate-400 flex items-center gap-2">
+              <i class="fa-solid fa-book-bookmark text-coralaccent"></i>
+              <span>본문 근거: 15장 저자의 교육 철학 (“두려움은 외면하게 만들고, 정보는 관심을 갖게 한다”)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= BOTTOM NAVIGATION BAR ================= -->
+  <footer
+    class="fixed bottom-0 left-0 right-0 h-14 bg-slate-950/85 backdrop-blur-md border-t border-white/10 z-50 px-6 flex items-center justify-between">
+    <!-- Left: Book Title & Quick Jump Dots -->
+    <div class="flex items-center gap-4">
+      <span class="font-serif text-xs md:text-sm text-slate-300 font-medium hidden sm:inline">
+        나는 풍요로웠고, 지구는 달라졌다 <span class="text-gold">· 4부 지구</span>
+      </span>
+      <div id="dotIndicators" class="flex items-center gap-1.5">
+        <!-- Generated by JS -->
+      </div>
+    </div>
+
+    <!-- Right: Prev/Next Controls -->
+    <div class="flex items-center gap-1.5">
+      <button onclick="handlePrev()"
+        class="w-9 h-9 rounded-lg bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center transition disabled:opacity-40"
+        id="prevBtn" title="이전 슬라이드 (← / Backspace)">
+        <i class="fa-solid fa-chevron-left text-xs"></i>
+      </button>
+      <button onclick="handleNext()"
+        class="w-9 h-9 rounded-lg bg-gold hover:bg-amberlight text-deepnavy font-bold flex items-center justify-center transition"
+        id="nextBtn" title="다음 슬라이드 (→ / Space)">
+        <i class="fa-solid fa-chevron-right text-xs"></i>
+      </button>
+    </div>
+  </footer>
+
+  <!-- ================= PRESENTATION SCRIPT ================= -->
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+    let currentSlide = 0;
+    let hookRevealed = false;
+
+    // Initialize Dot Indicators
+    const dotContainer = document.getElementById('dotIndicators');
+    for (let i = 0; i < totalSlides; i++) {
+      const dot = document.createElement('button');
+      dot.className = `h-2 rounded-full transition-all ${i === 0 ? 'w-6 bg-gold' : 'w-2 bg-slate-600 hover:bg-slate-400'}`;
+      dot.title = `${i + 1}번 슬라이드로 이동`;
+      dot.onclick = () => goToSlide(i);
+      dotContainer.appendChild(dot);
+    }
+
+    function updateUI() {
+      slides.forEach((slide, idx) => {
+        if (idx === currentSlide) {
+          slide.classList.add('active');
+        } else {
+          slide.classList.remove('active');
+        }
+      });
+
+      // Update Progress Bar & Badge
+      const progress = ((currentSlide + 1) / totalSlides) * 100;
+      document.getElementById('progressBar').style.width = `${progress}%`;
+      const activeSlide = slides[currentSlide];
+      document.getElementById('slideBadge').textContent = activeSlide.getAttribute('data-badge');
+
+      // Update Dots
+      const dots = dotContainer.children;
+      for (let i = 0; i < dots.length; i++) {
+        dots[i].className = `h-2 rounded-full transition-all ${i === currentSlide ? 'w-6 bg-gold' : 'w-2 bg-slate-600 hover:bg-slate-400'}`;
+      }
+
+      // Update Prev/Next disabled state
+      document.getElementById('prevBtn').disabled = currentSlide === 0;
+    }
+
+    function revealHookAnswer() {
+      hookRevealed = true;
+      const box = document.getElementById('hookAnswerBox');
+      if (box) box.classList.add('shown');
+    }
+
+    function hideHookAnswer() {
+      hookRevealed = false;
+      const box = document.getElementById('hookAnswerBox');
+      if (box) box.classList.remove('shown');
+    }
+
+    // 이후 행동 또는 다음 슬라이드 이동 (화면 우측 클릭, 우측 방향키, 스페이스바)
+    function handleNext() {
+      // 5번 슬라이드(index 4: 생각 열기)에서 답변이 아직 안 나왔다면 답변 먼저 공개
+      if (currentSlide === 4 && !hookRevealed) {
+        revealHookAnswer();
+        return;
+      }
+      if (currentSlide < totalSlides - 1) {
+        currentSlide++;
+        updateUI();
+      }
+    }
+
+    // 이전 행동 또는 이전 슬라이드 이동 (화면 좌측 클릭, 좌측 방향키, 백스페이스바)
+    function handlePrev() {
+      // 5번 슬라이드(index 4: 생각 열기)에서 답변이 떠 있는 상태라면 답변 먼저 숨김
+      if (currentSlide === 4 && hookRevealed) {
+        hideHookAnswer();
+        return;
+      }
+      if (currentSlide > 0) {
+        currentSlide--;
+        updateUI();
+      }
+    }
+
+    function goToSlide(index) {
+      currentSlide = index;
+      if (index < 4) {
+        hideHookAnswer();
+      } else if (index > 4) {
+        revealHookAnswer();
+      }
+      updateUI();
+    }
+
+    function toggleFullScreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(() => { });
+      } else {
+        document.exitFullscreen().catch(() => { });
+      }
+    }
+
+    // 화면 좌/우 절반 클릭으로 전체 흐름 제어 (버튼이나 링크 클릭 시 제외)
+    window.addEventListener('click', (e) => {
+      if (e.target.closest('button, a, input, label')) {
+        return;
+      }
+      const midX = window.innerWidth / 2;
+      if (e.clientX >= midX) {
+        handleNext();
+      } else {
+        handlePrev();
+      }
+    });
+
+    // 키보드 인풋: 좌/우 방향키, 스페이스바, 백스페이스바로 전체 흐름 제어
+    window.addEventListener('keydown', (e) => {
+      // 이후 행동 / 다음 슬라이드: 우측 방향키, 스페이스바, PageDown
+      if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+        e.preventDefault();
+        handleNext();
+      }
+      // 이전 행동 / 이전 슬라이드: 좌측 방향키, 백스페이스바, PageUp
+      else if (e.key === 'ArrowLeft' || e.key === 'Backspace' || e.key === 'PageUp') {
+        e.preventDefault();
+        handlePrev();
+      }
+      // 전체화면 토글 단축키: F
+      else if (e.key === 'f' || e.key === 'F') {
+        toggleFullScreen();
+      }
+    });
+
+    // Initial render
+    updateUI();
+  </script>
+</body>
+
+</html>

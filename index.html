@@ -113,7 +113,7 @@
   <div class="fixed top-4 left-6 z-40 flex items-center gap-3">
     <span id="slideBadge"
       class="px-3 py-1 rounded-full text-xs font-medium tracking-wider uppercase bg-slate-900/80 text-gold border border-gold/30 backdrop-blur-md">
-      COVER · 01 / 13
+      COVER · 01 / 16
     </span>
   </div>
 
@@ -129,7 +129,7 @@
   <main id="slidesContainer" class="relative w-full h-full">
 
     <!-- SLIDE 1: Title & Cover Slide -->
-    <section class="slide active" data-badge="COVER · 01 / 13">
+    <section class="slide active" data-badge="COVER · 01 / 16">
       <div class="max-w-4xl w-full text-center space-y-8 py-6">
         <!-- Subject Badge -->
         <div
@@ -177,7 +177,7 @@
     </section>
 
     <!-- SLIDE 2: Intro Image 1 (Sustainable city) - 통일된 규격 프레임 -->
-    <section class="slide" data-badge="INTRO · 02 / 13">
+    <section class="slide" data-badge="INTRO · 02 / 16">
       <div class="flex flex-col items-center justify-center space-y-6">
         <div
           class="relative w-[550px] h-[410px] max-w-[90vw] max-h-[65vh] rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.85)] border border-gold/30 bg-cardnavy flex items-center justify-center group transition-all duration-300">
@@ -189,7 +189,7 @@
     </section>
 
     <!-- SLIDE 3: Intro Image 2 (빨대거북이) - 동일한 규격 프레임 -->
-    <section class="slide" data-badge="INTRO · 03 / 13">
+    <section class="slide" data-badge="INTRO · 03 / 16">
       <div class="flex flex-col items-center justify-center space-y-6">
         <div
           class="relative w-[550px] h-[410px] max-w-[90vw] max-h-[65vh] rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.85)] border border-gold/30 bg-cardnavy flex items-center justify-center group transition-all duration-300">
@@ -201,7 +201,7 @@
     </section>
 
     <!-- SLIDE 4: Intro Image 3 (텀블러) - 동일한 규격 프레임 -->
-    <section class="slide" data-badge="INTRO · 04 / 13">
+    <section class="slide" data-badge="INTRO · 04 / 16">
       <div class="flex flex-col items-center justify-center space-y-6">
         <div
           class="relative w-[550px] h-[410px] max-w-[90vw] max-h-[65vh] rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.85)] border border-gold/30 bg-cardnavy flex items-center justify-center group transition-all duration-300">
@@ -213,7 +213,7 @@
     </section>
 
     <!-- SLIDE 5: Hook Question & Reveal (답변 버튼 삭제, 우측 클릭/키보드로 답변 공개) -->
-    <section class="slide" data-badge="OPENING · 05 / 13">
+    <section class="slide" data-badge="OPENING · 05 / 16">
       <div class="max-w-4xl w-full text-center space-y-12">
         <div
           class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/10 border border-gold/30 text-gold text-sm font-medium">
@@ -237,7 +237,7 @@
     </section>
 
     <!-- SLIDE 6: Book Introduction (4부 지구) -->
-    <section class="slide" data-badge="BOOK INTRO · 06 / 13">
+    <section class="slide" data-badge="BOOK INTRO · 06 / 16">
       <div
         class="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center custom-scroll overflow-y-auto max-h-full py-2">
         <!-- Left: Book Cover Image Card -->
@@ -293,176 +293,79 @@
       </div>
     </section>
 
-    <!-- SLIDE 7: Author Introduction (호프 자런 - 사용자 첨부 이미지 대체) -->
-    <section class="slide" data-badge="AUTHOR · 07 / 13">
+    <!-- SLIDE 7: Author Introduction (독서 인문학.odt 기반 작가 소개) -->
+    <section class="slide" data-badge="AUTHOR · 07 / 16">
       <div
-        class="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center custom-scroll overflow-y-auto max-h-full py-2">
+        class="max-w-5xl w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center custom-scroll overflow-y-auto max-h-full py-4">
         <!-- Author Photo & Quick Profile -->
-        <div class="lg:col-span-4 flex flex-col items-center">
+        <div class="lg:col-span-5 flex flex-col items-center">
           <div
             class="w-56 h-56 md:w-64 md:h-64 rounded-2xl overflow-hidden border-2 border-gold/50 shadow-2xl bg-cardnavy relative flex items-center justify-center">
-            <img id="authorImg"
-              src="hope_jahren.jpg"
-              alt="호프 자런 작가 사진" class="w-full h-full object-cover" />
+            <img id="authorImg" src="hope_jahren.jpg" alt="호프 자런 작가 사진" class="w-full h-full object-cover" />
           </div>
-          <div class="mt-4 text-center">
+          <div class="mt-4 text-center space-y-1.5">
             <h3 class="font-serif text-2xl font-bold text-white">호프 자런 <span
                 class="text-sm font-normal text-slate-400">Hope Jahren</span></h3>
-            <p class="text-xs text-amberlight mt-1">1969년 출생 · 식물생물학자 & 지구생물학자</p>
-            <p class="text-xs text-slate-400">현 노르웨이 오슬로 대학교 교수</p>
+            <div
+              class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold/15 text-amberlight border border-gold/30 text-xs font-semibold">
+              <i class="fa-solid fa-calendar-days text-[11px]"></i> 나이: 1969년생
+            </div>
+            <p class="text-xs text-slate-300 font-medium">
+              <i class="fa-solid fa-dna text-tealaccent mr-1"></i>직업: 지구생물학자, 식물학자
+            </p>
+            <p class="text-xs text-slate-400">
+              <i class="fa-solid fa-building-columns text-gold/70 mr-1"></i>현재 노르웨이 오슬로 대학교 교수
+            </p>
           </div>
         </div>
 
-        <!-- Author Bio & Highlights -->
-        <div class="lg:col-span-8 space-y-5 text-left">
+        <!-- Author Bio & Highlights (주요 이력 3개만 깔끔하게 배치) -->
+        <div class="lg:col-span-7 space-y-5 text-left">
           <div>
-            <span class="text-gold text-sm font-semibold tracking-wider uppercase">Author Profile · 작가 소개</span>
-            <h2 class="font-serif text-2xl md:text-4xl font-bold text-white mt-1">
-              따뜻한 시선과 냉철한 데이터의 과학자
+            <span class="text-gold text-xs font-semibold tracking-wider uppercase">Author Profile · 작가 소개</span>
+            <h2 class="font-serif text-2xl md:text-3xl font-bold text-white mt-1">
+              호프 자런 <span class="text-base font-normal text-slate-400 font-sans">주요 이력</span>
             </h2>
           </div>
 
-          <!-- Key Achievements -->
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            <div class="bg-cardnavy/90 border border-bordernavy p-4 rounded-xl">
-              <div class="text-amberlight text-xs font-semibold mb-1"><i class="fa-solid fa-book-open mr-1"></i> 대표 저서
+          <!-- Key Achievements (3개 이력) -->
+          <div class="space-y-3.5">
+            <div class="bg-cardnavy/90 border border-bordernavy p-5 rounded-2xl flex items-center gap-4 shadow-lg hover:border-gold/40 transition-colors">
+              <div class="w-12 h-12 rounded-xl bg-gold/15 text-gold flex items-center justify-center shrink-0 text-xl border border-gold/30">
+                <i class="fa-solid fa-book-bookmark"></i>
               </div>
-              <div class="text-sm font-bold text-white">글로벌 베스트셀러<br />《랩걸 (Lab Girl)》 저자</div>
-            </div>
-            <div class="bg-cardnavy/90 border border-bordernavy p-4 rounded-xl">
-              <div class="text-amberlight text-xs font-semibold mb-1"><i class="fa-solid fa-earth-americas mr-1"></i>
-                국제적 영향력</div>
-              <div class="text-sm font-bold text-white">2016 타임지 선정<br />‘세계에서 가장 영향력 있는 100인’</div>
-            </div>
-            <div class="bg-cardnavy/90 border border-bordernavy p-4 rounded-xl">
-              <div class="text-amberlight text-xs font-semibold mb-1"><i class="fa-solid fa-award mr-1"></i> 학술적 영예
+              <div>
+                <div class="text-xs text-amberlight font-semibold mb-0.5">주요 이력 1</div>
+                <div class="text-base md:text-lg font-bold text-white">글로벌 베스트셀러 <span class="text-amberlight">《랩걸(Lab Girl)》</span> 저자</div>
               </div>
-              <div class="text-sm font-bold text-white">과학자 최고 영예 중 하나인<br />‘풀브라이트 상’ 3회 수상</div>
             </div>
-          </div>
 
-          <!-- Narrative Characteristics based strictly on reading material -->
-          <div class="glass-panel p-6 rounded-2xl space-y-3 text-sm md:text-base text-slate-200 leading-relaxed">
-            <p>
-              <i class="fa-solid fa-quote-left text-gold/60 mr-2"></i>
-              <b>1999년 식물 생육장(Plexiglas 상자)을 직접 설계</b>하여 이산화탄소 농도 상승이 식물과 온도에 미치는 영향을 실험하고 온실효과의 위력을 눈으로 직접 확인했습니다.
-            </p>
-            <p>
-              어린 시절 1980년대 핵전쟁 공포를 겪었던 경험을 되돌아보며, <b>“두려움은 문제를 외면하게 만들고 정보는 문제에 관심을 갖게 한다”</b>는 교육자로서의 신념을 강조합니다.
-            </p>
-            <p class="text-amberlight font-medium">
-              기후 위기 앞에서 막연한 공포나 게으른 허무주의에 빠지는 것을 경계하며, 일상에서 에너지를 덜 소비하는 <b>‘소비의 해독’과 서로에 대한 친절</b>을 행동 강령으로 촉구합니다.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SLIDE 8: Key Figures (읽기 자료에 실제 등장하는 과학사 및 핵심 인물) -->
-    <section class="slide" data-badge="KEY FIGURES · 08 / 13">
-      <div class="max-w-6xl w-full space-y-6 custom-scroll overflow-y-auto max-h-full py-2">
-        <div class="text-center">
-          <span class="text-gold text-xs font-semibold tracking-widest uppercase">Scientists & Thinkers</span>
-          <h2 class="font-serif text-2xl md:text-4xl font-bold text-white mt-1">읽기 자료 속 핵심 과학자 및 인물</h2>
-          <p class="text-xs text-slate-400 mt-1">본문(4부 14장~19장)에 직접 언급된 기후 과학과 실천의 인물들</p>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          <!-- 1. Eunice Foote -->
-          <div class="bg-cardnavy/90 border border-bordernavy p-5 rounded-2xl space-y-2.5 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between mb-1">
-                <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-amberlight/15 text-amberlight">14장 · 1856년 최초 관찰</span>
-                <i class="fa-solid fa-flask text-gold/60"></i>
+            <div class="bg-cardnavy/90 border border-bordernavy p-5 rounded-2xl flex items-center gap-4 shadow-lg hover:border-gold/40 transition-colors">
+              <div class="w-12 h-12 rounded-xl bg-gold/15 text-gold flex items-center justify-center shrink-0 text-xl border border-gold/30">
+                <i class="fa-solid fa-earth-americas"></i>
               </div>
-              <h4 class="font-serif text-lg font-bold text-white">유니스 푸트 <span class="text-xs font-normal text-slate-400">Eunice Foote</span></h4>
-              <p class="text-xs text-slate-300 leading-relaxed mt-2">
-                유리병에 이산화탄소를 많이 채우면 햇빛 아래에서 훨씬 더 따뜻해지고 식는 데에도 오랜 시간이 걸린다는 <b>온실효과의 기본 원리를 최초로 관찰</b>했습니다.
-              </p>
-            </div>
-            <div class="text-[11px] text-slate-400 border-t border-white/10 pt-2">최초의 이산화탄소 열 흡수 발견</div>
-          </div>
-
-          <!-- 2. John Tyndall -->
-          <div class="bg-cardnavy/90 border border-bordernavy p-5 rounded-2xl space-y-2.5 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between mb-1">
-                <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-tealaccent/15 text-tealaccent">14장 · 학계 공식 입증</span>
-                <i class="fa-solid fa-vial-circle-check text-tealaccent/60"></i>
+              <div>
+                <div class="text-xs text-amberlight font-semibold mb-0.5">주요 이력 2</div>
+                <div class="text-base md:text-lg font-bold text-white">2016년 타임(TIME)지 선정 <span class="text-amberlight">‘세계에서 가장 영향력 있는 100인’</span></div>
               </div>
-              <h4 class="font-serif text-lg font-bold text-white">존 틴들 <span class="text-xs font-normal text-slate-400">John Tyndall</span></h4>
-              <p class="text-xs text-slate-300 leading-relaxed mt-2">
-                유니스 푸트의 발견 몇 년 후, 정교한 구리 장치를 만들어 이산화탄소가 열을 가두는 원리를 증명하여 <b>학계의 공식 인정을 받은 물리학자</b>입니다.
-              </p>
             </div>
-            <div class="text-[11px] text-slate-400 border-t border-white/10 pt-2">구리 장치를 통한 온실기체 증명</div>
-          </div>
 
-          <!-- 3. Svante Arrhenius -->
-          <div class="bg-cardnavy/90 border border-bordernavy p-5 rounded-2xl space-y-2.5 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between mb-1">
-                <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-coralaccent/15 text-coralaccent">14장 · 1896년 최초 경고</span>
-                <i class="fa-solid fa-triangle-exclamation text-coralaccent/60"></i>
+            <div class="bg-cardnavy/90 border border-bordernavy p-5 rounded-2xl flex items-center gap-4 shadow-lg hover:border-gold/40 transition-colors">
+              <div class="w-12 h-12 rounded-xl bg-gold/15 text-gold flex items-center justify-center shrink-0 text-xl border border-gold/30">
+                <i class="fa-solid fa-award"></i>
               </div>
-              <h4 class="font-serif text-lg font-bold text-white">스반테 아레니우스 <span class="text-xs font-normal text-slate-400">S. Arrhenius</span></h4>
-              <p class="text-xs text-slate-300 leading-relaxed mt-2">
-                스웨덴의 노벨화학상 수상자. 1896년에 이미 <b>화석연료를 태우는 일이 지구온난화를 야기할 것임을 일찍이 공식 경고</b>했던 선구적 화학자입니다.
-              </p>
-            </div>
-            <div class="text-[11px] text-slate-400 border-t border-white/10 pt-2">화석연료 연소와 온난화 최초 예측</div>
-          </div>
-
-          <!-- 4. E. O. Wilson -->
-          <div class="bg-cardnavy/90 border border-bordernavy p-5 rounded-2xl space-y-2.5 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between mb-1">
-                <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300">19장 · 생물 다양성의 아버지</span>
-                <i class="fa-solid fa-tree text-emerald-400/60"></i>
+              <div>
+                <div class="text-xs text-amberlight font-semibold mb-0.5">주요 이력 3</div>
+                <div class="text-base md:text-lg font-bold text-white">과학자 최고 영예 중 하나인 <span class="text-amberlight">‘풀브라이트 상’ 3회 수상</span></div>
               </div>
-              <h4 class="font-serif text-lg font-bold text-white">E. O. 윌슨 <span class="text-xs font-normal text-slate-400">Edward O. Wilson</span></h4>
-              <p class="text-xs text-slate-300 leading-relaxed mt-2">
-                여섯 번째 대멸종을 막기 위해 지구상 <b>육지의 50퍼센트를 인간의 손길이 닿지 않는 자연 보존 지역으로 지정하자는 ‘지구의 절반(Half-Earth)’</b>을 제창했습니다.
-              </p>
             </div>
-            <div class="text-[11px] text-slate-400 border-t border-white/10 pt-2">Half-Earth 50% 보존 구상</div>
-          </div>
-
-          <!-- 5. W. S. Merwin -->
-          <div class="bg-cardnavy/90 border border-bordernavy p-5 rounded-2xl space-y-2.5 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between mb-1">
-                <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-300">19장 · 계관시인의 복원</span>
-                <i class="fa-solid fa-seedling text-amber-400/60"></i>
-              </div>
-              <h4 class="font-serif text-lg font-bold text-white">W. S. 머윈 <span class="text-xs font-normal text-slate-400">W. S. Merwin</span></h4>
-              <p class="text-xs text-slate-300 leading-relaxed mt-2">
-                미국의 계관시인. 1977년 하와이 마우이의 <b>버려진 쓰레기 하치장에 30여 년간 나무를 심어 300종 이상의 멸종위기 야자나무를 품은 울창한 숲</b>으로 복원했습니다.
-              </p>
-            </div>
-            <div class="text-[11px] text-slate-400 border-t border-white/10 pt-2">쓰레기장을 열대림으로 복원한 실천</div>
-          </div>
-
-          <!-- 6. Jeffrey Sachs -->
-          <div class="bg-cardnavy/90 border border-bordernavy p-5 rounded-2xl space-y-2.5 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between mb-1">
-                <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-blue-500/15 text-blue-300">19장 · 세계행복협의회</span>
-                <i class="fa-solid fa-chart-pie text-blue-400/60"></i>
-              </div>
-              <h4 class="font-serif text-lg font-bold text-white">제프리 색스 <span class="text-xs font-normal text-slate-400">Jeffrey Sachs</span></h4>
-              <p class="text-xs text-slate-300 leading-relaxed mt-2">
-                유엔 자문관. 2017년 세계행복보고서를 통해 <b>“소비와 에너지 사용이 늘어났다고 해서 인류가 더 행복해지지 않았다”</b>는 점을 객관적으로 분석 발표했습니다.
-              </p>
-            </div>
-            <div class="text-[11px] text-slate-400 border-t border-white/10 pt-2">풍요와 행복의 탈동조화 규명</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SLIDE 9: Summary Part 1 (14장 ~ 15장) -->
-    <section class="slide" data-badge="SUMMARY 1 · 09 / 13">
+        <!-- SLIDE 8: Research Paper 1 (최미희·유종현 2025: 17개 시·도별 피해비용 및 DSCC) -->
+    <section class="slide" data-badge="SUMMARY 1 · 08 / 16">
       <div class="max-w-6xl w-full space-y-6 custom-scroll overflow-y-auto max-h-full py-2">
         <div class="text-center">
           <span class="text-gold text-xs font-semibold tracking-widest uppercase">Part 4 Summary · 4부 줄거리 (1/3)</span>
@@ -520,8 +423,7 @@
       </div>
     </section>
 
-    <!-- SLIDE 10: Summary Part 2 (16장 ~ 17장) -->
-    <section class="slide" data-badge="SUMMARY 2 · 10 / 13">
+    <section class="slide" data-badge="SUMMARY 2 · 09 / 16">
       <div class="max-w-6xl w-full space-y-6 custom-scroll overflow-y-auto max-h-full py-2">
         <div class="text-center">
           <span class="text-gold text-xs font-semibold tracking-widest uppercase">Part 4 Summary · 4부 줄거리 (2/3)</span>
@@ -578,8 +480,7 @@
       </div>
     </section>
 
-    <!-- SLIDE 11: Summary Part 3 (18장 ~ 19장) -->
-    <section class="slide" data-badge="SUMMARY 3 · 11 / 13">
+    <section class="slide" data-badge="SUMMARY 3 · 10 / 16">
       <div class="max-w-6xl w-full space-y-6 custom-scroll overflow-y-auto max-h-full py-2">
         <div class="text-center">
           <span class="text-gold text-xs font-semibold tracking-widest uppercase">Part 4 Summary · 4부 줄거리 (3/3)</span>
@@ -636,8 +537,348 @@
       </div>
     </section>
 
+    <section class="slide" data-badge="RESEARCH 1 · 11 / 16">
+      <div class="max-w-6xl w-full space-y-4 custom-scroll overflow-y-auto max-h-full py-2">
+        <div class="text-center">
+          <span class="text-gold text-xs font-semibold tracking-widest uppercase"><i class="fa-solid fa-chart-line mr-1"></i>Climate Economics · 최신 연구 논문 ①</span>
+          <h2 class="font-serif text-2xl md:text-3xl font-bold text-white mt-1">한국의 지역별 기후 피해비용 & 탄소의 사회적 비용</h2>
+          <p class="text-xs text-slate-400 mt-0.5">2030~2060년 강수량 증가에 따른 17개 시·도별 경제적 피해액과 탄소 1톤당 피해비용(DSCC)</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+          <!-- Left: Table 1 Image -->
+          <div class="lg:col-span-6 flex flex-col items-center">
+            <div class="bg-cardnavy border border-gold/40 rounded-2xl p-2.5 shadow-2xl relative w-full">
+              <img src="paper_table1.jpg" alt="Table 1. 17개 시·도별 피해비용 및 탄소의 사회적 비용 표" class="w-full h-auto rounded-xl object-contain bg-white" />
+              <div class="mt-2 flex items-center justify-between text-[11px] text-slate-400 px-2">
+                <span><i class="fa-solid fa-table mr-1 text-gold"></i>Table 1. 17개 시·도별 피해비용 & DSCC (최미희·유종현, 2025)</span>
+                <span class="text-amberlight font-semibold">단위: 조 원 / 톤당 원</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Key Analysis Points -->
+          <div class="lg:col-span-6 space-y-3 text-left">
+            <!-- Point 1: Key Factor & Total Cost -->
+            <div class="bg-cardnavy/90 border border-bordernavy p-4 rounded-xl space-y-1">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-amberlight flex items-center gap-1.5">
+                  <i class="fa-solid fa-cloud-showers-heavy text-gold"></i> 핵심 요인 및 총 피해비용
+                </span>
+                <span class="text-[11px] px-2 py-0.5 rounded-full bg-coralaccent/20 text-coralaccent font-bold">누적 87조~200조 원</span>
+              </div>
+              <p class="text-xs text-slate-200 leading-relaxed pt-1">
+                한국은 기온 자체보다 <strong class="text-amberlight">'연 총강수량의 증가'</strong>가 지역 1인당 GRDP 성장률의 <b>1~4%</b>를 깎아먹는 핵심 요인임. 2030~2060년 전국 총 피해비용은 <b class="text-white">누적 87조 원</b>(최악의 시나리오 시 <b>최대 200조 원</b>)으로 추정됨.
+              </p>
+            </div>
+
+            <!-- Point 2: Metropolitan Concentration -->
+            <div class="bg-cardnavy/90 border border-bordernavy p-4 rounded-xl space-y-1">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-tealaccent flex items-center gap-1.5">
+                  <i class="fa-solid fa-city text-tealaccent"></i> 수도권 피해 집중 (전체의 59%)
+                </span>
+                <span class="text-[11px] px-2 py-0.5 rounded-full bg-tealaccent/20 text-tealaccent font-bold">경기·서울·인천 편중</span>
+              </div>
+              <p class="text-xs text-slate-200 leading-relaxed pt-1">
+                인구·자산이 밀집된 <b>경기도 29조 원(33%)</b>, <b>서울 13조 원(15%)</b>, <b>인천 10조 원(11%)</b>으로 수도권 세 곳에서 전체의 <b>59%</b> 피해 발생. 특히 경기도는 중기(2040~2060)에 연평균 13조 원(최대 38조 원) 피해 예상.
+              </p>
+            </div>
+
+            <!-- Point 3: DSCC Gap -->
+            <div class="bg-cardnavy/90 border border-bordernavy p-4 rounded-xl space-y-1">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-coralaccent flex items-center gap-1.5">
+                  <i class="fa-solid fa-scale-unbalanced text-coralaccent"></i> 탄소의 사회적 비용(DSCC) 45배 격차
+                </span>
+                <span class="text-[11px] px-2 py-0.5 rounded-full bg-gold/20 text-amberlight font-bold">지역별 기후 불평등</span>
+              </div>
+              <p class="text-xs text-slate-200 leading-relaxed pt-1">
+                이산화탄소 1톤 배출 시 발생하는 장기 경제 피해액이 <b class="text-amberlight">경기도는 4,199원</b>인 반면, <b class="text-slate-300">전라북도는 94원</b>에 불과하여 지역 간 <b>최대 45배의 극심한 격차</b>가 발생함.
+              </p>
+            </div>
+
+            <!-- Citation Box -->
+            <div class="px-3 py-2 rounded-lg bg-deepnavy/80 border border-white/10 text-[11px] text-slate-400 leading-normal">
+              <strong class="text-slate-300">출처:</strong> 최미희, 유종현 (2025). 한국의 지역별 기후변화 피해비용 및 탄소의 사회적 비용 추정. <i>Journal of Climate Change Research</i>, 16(4), 705-719.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-badge="RESEARCH 2 · 12 / 16">
+      <div class="max-w-6xl w-full space-y-4 custom-scroll overflow-y-auto max-h-full py-2">
+        <div class="text-center">
+          <span class="text-gold text-xs font-semibold tracking-widest uppercase"><i class="fa-solid fa-map-location-dot mr-1"></i>Regional Vulnerability · 최신 연구 논문 ②</span>
+          <h2 class="font-serif text-2xl md:text-3xl font-bold text-white mt-1">한반도 지역 경제(GRDP) 대비 기후 취약성 지도</h2>
+          <p class="text-xs text-slate-400 mt-0.5">단기(2030~2040) 대비 중기(2040~2060) 피해 비중 4배 이상 급증 및 취약 시·도 분석</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+          <!-- Left: Fig 6 Map Image -->
+          <div class="lg:col-span-5 flex flex-col items-center">
+            <div class="bg-cardnavy border border-gold/40 rounded-2xl p-2.5 shadow-2xl relative w-full flex flex-col items-center">
+              <img src="paper_fig6.jpg" alt="Fig 6. Regional damage ratios relative to GRDP" class="w-full max-h-[360px] rounded-xl object-contain bg-white" />
+              <div class="mt-2 w-full flex items-center justify-between text-[11px] text-slate-400 px-2">
+                <span><i class="fa-solid fa-map mr-1 text-gold"></i>Fig. 6. 단기 vs 중기 GRDP 대비 피해 비중</span>
+                <span class="text-amberlight font-semibold">최미희·유종현 (2025)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Key Analysis Points -->
+          <div class="lg:col-span-7 space-y-3.5 text-left">
+            <!-- Point 1: 4x Surge in Damage Ratio -->
+            <div class="bg-cardnavy/90 border border-bordernavy p-4 rounded-xl space-y-1.5">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-amberlight flex items-center gap-1.5">
+                  <i class="fa-solid fa-chart-line text-gold"></i> 10~20년 사이 피해 비중 4배 이상 급증
+                </span>
+                <span class="text-[11px] px-2 py-0.5 rounded-full bg-coralaccent/20 text-coralaccent font-bold">2030년대 ➔ 2050년대</span>
+              </div>
+              <p class="text-xs text-slate-200 leading-relaxed">
+                지도에서 볼 수 있듯, 단기(2030~2040) 연평균 0.1~0.4% 수준이던 GRDP 대비 피해 비중이 중기(2040~2060)에는 <b>전국 평균 4배 이상 급격히 짙은 주황~붉은색으로 확산</b>되며 경제적 타격이 급증함.
+              </p>
+            </div>
+
+            <!-- Point 2: Most Vulnerable Regions by GRDP -->
+            <div class="bg-cardnavy/90 border border-bordernavy p-4 rounded-xl space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-tealaccent flex items-center gap-1.5">
+                  <i class="fa-solid fa-triangle-exclamation text-tealaccent"></i> 지역 경제 규모 대비 취약성 TOP 4
+                </span>
+                <span class="text-[11px] text-slate-400">자체 경제 규모 대비 체감 타격</span>
+              </div>
+              <p class="text-xs text-slate-300">
+                절대적 피해 금액은 수도권이 크지만, <b>해당 지역의 경제 규모(GRDP) 대비 실질적 취약도</b>로 환산하면 비수도권 대도시 및 자치시의 타격이 가장 심각함:
+              </p>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-0.5">
+                <div class="p-2.5 rounded-lg bg-deepnavy border border-coralaccent/30 text-center">
+                  <div class="text-[11px] text-slate-400">1위 대전</div>
+                  <div class="text-base font-bold text-coralaccent mt-0.5">2.34%</div>
+                </div>
+                <div class="p-2.5 rounded-lg bg-deepnavy border border-coralaccent/30 text-center">
+                  <div class="text-[11px] text-slate-400">2위 광주</div>
+                  <div class="text-base font-bold text-coralaccent mt-0.5">2.09%</div>
+                </div>
+                <div class="p-2.5 rounded-lg bg-deepnavy border border-amberlight/30 text-center">
+                  <div class="text-[11px] text-slate-400">3위 인천</div>
+                  <div class="text-base font-bold text-amberlight mt-0.5">2.06%</div>
+                </div>
+                <div class="p-2.5 rounded-lg bg-deepnavy border border-amberlight/30 text-center">
+                  <div class="text-[11px] text-slate-400">4위 세종</div>
+                  <div class="text-base font-bold text-amberlight mt-0.5">2.03%</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Point 3: Policy Takeaway -->
+            <div class="p-3.5 rounded-xl bg-cardnavy/70 border border-white/10 text-xs text-slate-300 leading-relaxed">
+              <i class="fa-solid fa-lightbulb text-gold mr-1.5"></i>
+              <b>시사점:</b> 수도권 중심의 획일적 방재를 넘어, 지역 경제 규모 대비 기후 재난 복원력이 취약한 지자체에 대한 <b>차등적 국가 기후 적응 기금 지원</b>이 필수적임.
+            </div>
+
+            <!-- Citation Box -->
+            <div class="px-3 py-1.5 rounded-lg bg-deepnavy/80 border border-white/10 text-[11px] text-slate-400">
+              <strong class="text-slate-300">출처:</strong> 최미희, 유종현 (2025). 한국의 지역별 기후변화 피해비용 및 탄소의 사회적 비용 추정. <i>Journal of Climate Change Research</i>, 16(4), 705-719.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 13: Communication Research (Janna de Graaf et al. 2024: Doom Communication) -->
+    <section class="slide" data-badge="COMMUNICATION · 13 / 16">
+      <div class="max-w-6xl w-full space-y-4 custom-scroll overflow-y-auto max-h-full py-2">
+        <div class="text-center">
+          <span class="text-gold text-xs font-semibold tracking-widest uppercase"><i class="fa-solid fa-bullhorn mr-1"></i>Health & Climate Communication · 최신 커뮤니케이션 연구</span>
+          <h2 class="font-serif text-2xl md:text-3xl font-bold text-white mt-1">공포 소구와 기후변화 ‘파멸적 소통(Doom Communication)’의 한계</h2>
+          <p class="text-xs text-slate-400 mt-0.5">극단적 종말론적 경고는 과연 대중의 기후 행동을 이끌어내는가? (Janna de Graaf et al., 2024)</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch text-left">
+          <!-- Left Column: Research Design & Paper Info -->
+          <div class="lg:col-span-5 flex flex-col justify-between space-y-3">
+            <!-- Research Method Card -->
+            <div class="bg-cardnavy/95 border border-bordernavy p-5 rounded-2xl space-y-2.5 shadow-xl flex-1">
+              <div class="flex items-center justify-between pb-2 border-b border-white/10">
+                <span class="text-xs font-bold text-amberlight flex items-center gap-1.5">
+                  <i class="fa-solid fa-flask-vial text-gold"></i> 실험 설계 및 연구 방법
+                </span>
+                <span class="text-[11px] px-2 py-0.5 rounded-full bg-gold/15 text-amberlight font-semibold">영국 & 네덜란드</span>
+              </div>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                영국과 네덜란드의 일반 대중을 대상으로, 기후 변화의 결과를 보여주는 메시지와 영상의 <strong class="text-white">‘위협 수준(고위협 vs 저위협)’</strong>을 조작하여 2차례의 엄밀한 실험을 진행함.
+              </p>
+              <div class="space-y-1.5 pt-1 text-xs">
+                <div class="p-2.5 rounded-xl bg-deepnavy/80 border border-white/5">
+                  <span class="text-tealaccent font-bold"><i class="fa-solid fa-check-circle mr-1"></i>적응적 반응 측정:</span>
+                  <p class="text-slate-300 text-[11px] mt-0.5">기후 변화 완화를 위한 실천 및 정책 참여 의지</p>
+                </div>
+                <div class="p-2.5 rounded-xl bg-deepnavy/80 border border-white/5">
+                  <span class="text-coralaccent font-bold"><i class="fa-solid fa-triangle-exclamation mr-1"></i>부적응적 반응 측정:</span>
+                  <p class="text-slate-300 text-[11px] mt-0.5">기후 변화 회의주의, 죄책감 부정, 문제 회피 태도</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Paper Metadata & DOI Box -->
+            <div class="p-4 rounded-xl bg-deepnavy/90 border border-white/10 space-y-2 text-xs text-slate-300">
+              <div class="flex items-center justify-between">
+                <span class="text-[11px] font-bold text-slate-400">논문 정식 출처</span>
+                <span class="text-[10px] px-2 py-0.5 rounded bg-tealaccent/20 text-tealaccent font-semibold">Open Access</span>
+              </div>
+              <p class="text-[11px] text-slate-300 leading-snug">
+                <b>Climate Change Doom Communication From a Fear Appeal Perspective</b><br />
+                <span class="text-slate-400">Janna de Graaf 외 3명, <i>European Journal of Health Communication</i>, 5(4), 2024.</span>
+              </p>
+              <div class="pt-2 border-t border-white/10 flex items-center justify-between text-[11px]">
+                <a href="https://doi.org/10.47368/ejhc.2024.402" target="_blank" rel="noopener noreferrer" class="text-tealaccent hover:underline flex items-center gap-1 font-medium">
+                  DOI 원문 <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                </a>
+                <a href="https://ejhc.org/article/view/4542" target="_blank" rel="noopener noreferrer" class="text-amberlight hover:underline flex items-center gap-1 font-medium">
+                  PDF 전문 열람 <i class="fa-solid fa-file-pdf text-[9px]"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Findings & Causes -->
+          <div class="lg:col-span-7 flex flex-col justify-between space-y-3">
+            <!-- Finding 1: Fear effect was minimal -->
+            <div class="bg-cardnavy/95 border border-bordernavy p-4 rounded-xl space-y-1.5 shadow-xl">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-coralaccent flex items-center gap-1.5">
+                  <i class="fa-solid fa-circle-exclamation text-coralaccent"></i> 주요 연구 결과
+                </span>
+                <span class="text-xs px-2.5 py-0.5 rounded-full bg-coralaccent/20 text-coralaccent font-bold">“공포의 효과는 미미했다”</span>
+              </div>
+              <p class="text-xs text-slate-200 leading-relaxed pt-0.5">
+                기후 변화에 대해 <strong class="text-amberlight">매우 위협적이고 파멸적인(Doom) 메시지</strong>를 노출하더라도, 덜 위협적인 메시지를 전달했을 때와 비교해 <strong class="text-white">대중의 긍정적 행동(적응)이나 부정적 태도(부적응) 모두에 통계적으로 유의미한 차이가 나타나지 않음.</strong>
+              </p>
+              <p class="text-[11px] text-slate-400 bg-deepnavy/60 p-2 rounded-lg">
+                <i class="fa-solid fa-quote-left mr-1 text-gold/60"></i>
+                경고의 수위를 극단적으로 높인다고 해서 대중이 환경 보호에 더 적극적으로 나서지도, 반대로 더 심하게 부정하지도 않음.
+              </p>
+            </div>
+
+            <!-- Finding 2: Why Fear Fails (2 Causes) -->
+            <div class="bg-cardnavy/95 border border-bordernavy p-4 rounded-xl space-y-2 shadow-xl">
+              <span class="text-xs font-bold text-amberlight flex items-center gap-1.5">
+                <i class="fa-solid fa-brain text-gold"></i> 원인 분석: 왜 공포 소구가 통하지 않는가?
+              </span>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-0.5">
+                <div class="p-3 rounded-xl bg-deepnavy/70 border border-white/5 space-y-1">
+                  <div class="text-xs font-bold text-white flex items-center gap-1">
+                    <i class="fa-solid fa-shield-halved text-amberlight"></i> 만성적 노출과 둔감화
+                  </div>
+                  <p class="text-[11px] text-slate-300 leading-relaxed">
+                    대중은 이미 일상에서 기후 위기 관련 파멸적(Doom) 메시지에 장기간 과도하게 노출되어, 새로운 종말론적 경고에도 <b>심리적 무감각 상태</b>에 도달함.
+                  </p>
+                </div>
+
+                <div class="p-3 rounded-xl bg-deepnavy/70 border border-white/5 space-y-1">
+                  <div class="text-xs font-bold text-white flex items-center gap-1">
+                    <i class="fa-solid fa-user-xmark text-coralaccent"></i> 개인적 통제감·효능감 부재
+                  </div>
+                  <p class="text-[11px] text-slate-300 leading-relaxed">
+                    금연 같은 개인 건강 위협과 달리, 거대한 지구적 재앙 앞에서는 “내 작은 실천이 거대 재앙을 막을 수 있을까?”라는 <b>무력감과 효능감 저하</b>가 발생함.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Takeaway Box -->
+            <div class="p-3 rounded-xl bg-gold/10 border border-gold/30 text-xs text-slate-200 flex items-center gap-2.5">
+              <i class="fa-solid fa-comments text-amberlight text-lg shrink-0"></i>
+              <div class="text-[11px] leading-relaxed">
+                <strong class="text-amberlight">토론 연계 시사점:</strong> 공포심만을 자극하는 종말론적 경고는 대중을 움직이지 못함. 개인이 통제할 수 있는 <b>구체적 실천 방안과 효능감(Efficacy)</b>을 제시하는 소통 방식의 전환이 필수적임.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-badge="NEWS REPORT · 14 / 16">
+      <div class="max-w-6xl w-full space-y-5 custom-scroll overflow-y-auto max-h-full py-2">
+        <div class="text-center">
+          <span class="text-gold text-xs font-semibold tracking-widest uppercase"><i class="fa-solid fa-newspaper mr-1"></i>Global Climate Crisis · 최신 언론 보도</span>
+          <h2 class="font-serif text-2xl md:text-4xl font-bold text-white mt-1">현실이 된 기후 재난: 무너지는 빙하와 눈 없는 겨울</h2>
+          <p class="text-xs text-slate-400 mt-1">히말라야·안데스 빙하 붕괴 홍수 참사와 동계올림픽 존립 위기를 알리는 최신 보도</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 items-stretch">
+          <!-- Article 1: 연합뉴스 -->
+          <div class="bg-cardnavy/95 border border-bordernavy hover:border-gold/50 transition-all rounded-2xl p-6 flex flex-col justify-between shadow-xl">
+            <div class="space-y-3.5">
+              <div class="flex items-center justify-between pb-3 border-b border-white/10">
+                <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-bold flex items-center gap-1.5">
+                  <i class="fa-solid fa-newspaper"></i> 연합뉴스 · 2026.09.02
+                </span>
+                <span class="text-xs text-slate-400">송광호 기자</span>
+              </div>
+              <h3 class="font-serif text-xl font-bold text-white leading-snug">
+                「"네팔 대홍수 남일 아냐"…남미 안데스 빙하도 붕괴 공포」
+              </h3>
+              <div class="space-y-2 text-xs md:text-sm text-slate-200 leading-relaxed">
+                <p>
+                  • <strong class="text-amberlight">히말라야 빙하 붕괴 참사:</strong> 네팔 초대형 대홍수로 수천 명의 사상자와 실종자가 발생하고 국가 인프라가 궤멸적 타격을 입음. 참사의 직접 원인이 지진이 아닌 <b>‘기후변화로 인한 빙하 붕괴’</b>로 밝혀짐.
+                </p>
+                <p>
+                  • <strong class="text-amberlight">남미 안데스로 번진 공포:</strong> 페루, 칠레, 아르헨티나 등 안데스산맥 국가들에서도 빙하가 녹아내려 언제 터질지 모르는 <b>'빙하호 붕괴(자연 댐 결괴)'</b> 공포 확산.
+                </p>
+                <p>
+                  • <strong class="text-coralaccent">과학자들의 경고:</strong> 온난화로 전 세계 고산 지대 빙하가 얇아지고 불안정해져, 네팔과 같은 빙하 붕괴형 돌발 홍수 재난이 다른 산악 국가에서도 언제든 반복될 수 있음.
+                </p>
+              </div>
+            </div>
+            <div class="pt-4 mt-4 border-t border-white/10 flex items-center justify-between text-xs text-slate-400">
+              <span>출처: 『연합뉴스』 (2026.09.02)</span>
+              <a href="https://www.yna.co.kr/view/AKR20260902004900087" target="_blank" rel="noopener noreferrer" class="text-tealaccent hover:underline flex items-center gap-1 font-medium">
+                기사 원문 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Article 2: 문화일보 -->
+          <div class="bg-cardnavy/95 border border-bordernavy hover:border-gold/50 transition-all rounded-2xl p-6 flex flex-col justify-between shadow-xl">
+            <div class="space-y-3.5">
+              <div class="flex items-center justify-between pb-3 border-b border-white/10">
+                <span class="px-3 py-1 rounded-full bg-amber-500/20 text-amberlight text-xs font-bold flex items-center gap-1.5">
+                  <i class="fa-solid fa-snowflake"></i> 문화일보 · 2026.01.19
+                </span>
+                <span class="text-xs text-slate-400">정세영 기자</span>
+              </div>
+              <h3 class="font-serif text-xl font-bold text-white leading-snug">
+                「눈 없는 겨울… 위기의 동계올림픽」
+              </h3>
+              <div class="space-y-2 text-xs md:text-sm text-slate-200 leading-relaxed">
+                <p>
+                  • <strong class="text-amberlight">2026 밀라노·코르티나담페초 비상:</strong> 지난 40여 년간 기온 급상승으로 설원의 눈이 사라져, 설상 종목 정상화를 위해 <b class="text-coralaccent">약 240만㎥의 막대한 인공설</b>을 투입하기로 결정. 현지에서는 “결국 눈과의 싸움”이라 토로.
+                </p>
+                <p>
+                  • <strong class="text-amberlight">알프스의 회색화:</strong> 기후학자 루카 메르칼리, <i>“50년 전 토리노에서 알프스를 보면 10월부터 6월까지 흰 눈으로 덮였으나, 지금은 회색인 날이 더 많다”</i> 진단.
+                </p>
+                <p>
+                  • <strong class="text-coralaccent">동계올림픽 존립 위기 (IOC 연구):</strong> 캐나다 워털루대·인스브루크대 분석 결과, <b>2050년대 동계올림픽 개최 가능 도시는 단 52곳</b>에 불과, 2080년대에는 30곳까지 감소 전망.
+                </p>
+              </div>
+            </div>
+            <div class="pt-4 mt-4 border-t border-white/10 flex items-center justify-between text-xs text-slate-400">
+              <span>출처: 『문화일보』 (2026.01.19)</span>
+              <a href="https://www.munhwa.com/article/11561809" target="_blank" rel="noopener noreferrer" class="text-amberlight hover:underline flex items-center gap-1 font-medium">
+                기사 원문 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- SLIDE 12: Debate Topic 1 -->
-    <section class="slide" data-badge="DEBATE 1 · 12 / 13">
+    <section class="slide" data-badge="DEBATE 1 · 15 / 16">
       <div class="max-w-6xl w-full space-y-6 custom-scroll overflow-y-auto max-h-full py-2">
         <div class="text-center space-y-2">
           <span
@@ -698,7 +939,7 @@
     </section>
 
     <!-- SLIDE 13: Debate Topic 2 -->
-    <section class="slide" data-badge="DEBATE 2 · 13 / 13">
+    <section class="slide" data-badge="DEBATE 2 · 16 / 16">
       <div class="max-w-6xl w-full space-y-6 custom-scroll overflow-y-auto max-h-full py-2">
         <div class="text-center space-y-2">
           <span

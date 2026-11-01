@@ -12,3 +12,4 @@
 
 ## 🌐 웹에서 바로 보기 (GitHub Pages)
 GitHub 저장소의 `Settings` > `Pages` > `Deploy from a branch` (main / root) 설정을 통해 바로 호스팅됩니다.
+
